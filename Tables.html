@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" href="table.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+<table id="myTable">
+  <tr class="header">
+    <th style="width:60%;">Lesson</th>
+    <th style="width:40%;">views</th>
+  </tr>
+  <tr>
+    <td><a href="https://youtu.be/U3u71xwF1y4 ">
+      Chess lesson 1 </a></td>
+    <td>100 views</td>
+  </tr>
+  <tr>
+    <td><a href="https://youtu.be/HRA3Wa8PBVs ">Lesson 2 Chess Tricks and Language </a></td>
+      <td>100 views</td>
+  </tr>
+  <tr>
+    <td><a href="https://youtu.be/HYImHEollfk ">Chess lesson 3 fools mate and some game points with a match </a></td>
+          <td>100 views</td>
+  </tr>
+  <tr>
+    <td><a href="https://youtu.be/bah8uaU94hg ">Chess lesson 4 Danish gambit and Cochrane gambit </a></td>
+        <td>100 views</td>
+  </tr>
+  <tr>
+    <td><a href="https://youtu.be/bah8uaU94hg ">Chess lesson 4 Danish gambit and Cochrane gambit </a></td>
+        <td>100 views</td>
+  </tr>
+</table>
+<button class="input-bytton" onclick="window.location.href='index.html';">
+ Back
+</button>
+<script>
+  function myFunction() {
+    // Declare variables
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+  
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }
+  </script>
+ 
