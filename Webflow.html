@@ -1,0 +1,161 @@
+<html>
+<head>
+    
+</head>
+     <body   bgcolor= "lightblue"> 
+           <h1><center> Web flow </center></h1>
+             
+       <button class="button1"  onclick="window.location.href='#';">
+        About  Us 
+      </button>
+      <button class="button1" onclick="window.location.href='qr-generator.html';">
+      Qr code generate
+     </button>
+    
+
+                   <button class="button1" onclick="window.location.href='Myown.html';">
+                    How it works 
+                  </button>
+           <hr color="blue ">
+           <marquee><h2> Html coding sofware By Chirayu  </h2></marquee>
+           
+
+
+
+
+
+
+
+
+           <br> <br> <br> <br> <br> <br> <br> <!DOCTYPE html>
+<html>
+<head>
+    <title>Chirayukamal</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+    	div {
+            padding: 10px;
+            background-color: "lightblue";
+            overflow: hidden;
+        }
+    	input[type=text], textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 6px lightblue;
+            border-radius: 4px;
+            background-color: white;
+        }
+        input[type=button]{ 
+            width: auto;
+            float: right;
+            cursor: pointer;
+            padding: 7px;
+           
+        }
+       
+        
+        h1 {
+          text-align: center;
+        }
+        
+        h2 {
+          text-align: center;
+        }
+        
+       
+         button {
+             
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+            text-align: right;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+       
+    </style>
+</head>
+<body>
+    
+      
+    <div>
+        
+        <!--Add few elements to the form-->
+        <!--Not to be changed  -->
+
+        <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+        <df-messenger
+          intent="WELCOME"
+          chat-title="Sparky@bot"
+          agent-id="d3cce74f-c516-4ccc-9d8c-32d81dc68987"
+          language-code="en"
+        ></df-messenger>
+        </hr>
+        <div>
+            <input type="text" id="txtName" placeholder="File name" />
+        </div>
+        <div>
+            
+        </div>
+       
+        <div>
+            <textarea id="CODE" name="CODE" placeholder=" Coding part .." style="height: 300px"></textarea>
+        </div>
+      
+
+        <!--Add to button to save the data.-->
+        <div>
+            <input type="button" id="bt" value="Save data to file" onclick="saveFile()" />
+        </div>
+    </div>
+</body>
+<script>
+    let saveFile = () => {
+    	
+        // Get the data from each element on the form.
+    	const name = document.getElementById('txtName');
+        const CODE = document.getElementById('CODE');
+        
+        // This variable stores all the data.
+        let data = 
+            '\r  ' + name.value + ' \r\n ' + 
+            ' ' + CODE.value;
+        
+        // Convert the text to BLOB.
+        const textToBLOB = new Blob([data], { type: 'text/plain' });
+        const sFileName = 'Webflow.html';	   // The file to save the data.
+
+        let newLink = document.createElement("a");
+        newLink.download = sFileName;
+
+        if (window.webkitURL != null) {
+            newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+        }
+        else {
+            newLink.href = window.URL.createObjectURL(textToBLOB);
+            newLink.style.display = "none";
+            document.body.appendChild(newLink);
+        }
+
+        newLink.click(); 
+    }
+</script>
+      
+  
+     
+         
+
+
+
+
+
+                   
+    
+     </body>
+
+
+</html>
