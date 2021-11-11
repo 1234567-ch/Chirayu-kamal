@@ -76,7 +76,14 @@
   display: inline-block;
   font-size: 16px;
 }
-       
+    .footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;   
     </style>
 </head>
 <body>
@@ -105,6 +112,13 @@
         <div>
             <textarea id="CODE" name="CODE" placeholder=" Coding part .." style="height: 300px"></textarea>
         </div>
+   
+    <div>
+        <input type="text" id="country" name="country" placeholder=" <div class="footer">
+  <p>Footer</p>
+</div>" 
+               readonly>
+    </div>
       
 
         <!--Add to button to save the data.-->
@@ -123,7 +137,7 @@
         // This variable stores all the data.
         let data = 
             '\r  ' + name.value + ' \r\n ' + 
-            ' ' + CODE.value;
+            ' '+  + CODE.value;
         
         // Convert the text to BLOB.
         const textToBLOB = new Blob([data], { type: 'text/plain' });
