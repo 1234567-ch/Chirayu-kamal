@@ -83,7 +83,9 @@
   width: 100%;
   background-color: lightblue;
   color: white;
-  text-align: center;   
+  text-align: center; 
+  
+
     </style>
 </head>
 <body>
@@ -110,14 +112,23 @@
         </div>
        
         <div>
-            <textarea id="CODE" name="CODE" placeholder=" Coding part .." style="height: 300px"></textarea>
+            <textarea id="CODE" name="CODE" placeholder=" Coding part .." style= "height: 300px" ></textarea>
         </div>
+            <div>
+       
+       <div>
+        
    
-    <div>
-        <input type="text" id="country" name="Footer" placeholder=" <div class="footer">
-  <p>Powered by Webflow <br> link -  https://1234567-ch.github.io/Chirayu-kamal/index.html</p>
-</div>" 
-               readonly>
+       
+        
+        
+        
+        </div>
+
+
+
+
+
     </div>
       
 
@@ -126,18 +137,27 @@
             <input type="button" id="bt" value="Save data to file" onclick="saveFile()" />
         </div>
     </div>
-</body>
-<script>
+
+
+
+
+                  <script>
     let saveFile = () => {
     	
-        // Get the data from each element on the form.
+       
     	const name = document.getElementById('txtName');
         const CODE = document.getElementById('CODE');
         
         // This variable stores all the data.
         let data = 
-            '\r  ' + name.value + ' \r\n ' + 
-            ' '+  + CODE.value;
+            '\r  ' + name.value + 'Powered by Webflow link = https://1234567-ch.github.io/Chirayu-kamal/index.html ' +  CODE.value ; 
+
+
+
+
+
+
+         
         
         // Convert the text to BLOB.
         const textToBLOB = new Blob([data], { type: 'text/plain' });
