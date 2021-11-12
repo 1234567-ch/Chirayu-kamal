@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>   Contact Form</title>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<script>
+function SubForm (){
+    $.ajax({
+        url:'https://api.apispreadsheets.com/data/20416/',
+        type:'post',
+        data:$("#myForm").serializeArray(),
+        success: function(){
+          alert("Form Data Submitted :)")
+        },
+        error: function(){
+          alert("There was an error :(")
+        }
+    });
+}
+</script>
+
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    div {
+        padding: 10px;
+        background-color: #f6f6f6;
+        overflow: hidden;
+    }
+    input[type=text], textarea, select {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    input[type=button]{ 
+        width: auto;
+        float: right;
+        cursor: pointer;
+        padding: 7px;
+    }
+</style>
+</head>
+<body>
+  <form id="myForm">
+    <label>Full Name</label>
+    <br/>
+    <input name="full_name" />
+    <br/>
+    <label>Email</label>
+    <br/>
+    <input name="email" />
+    <br/>
+    <label>Age</label>
+    <br/>
+    <input type="radio" id="age" name="age" value="18-35" /> 18-35<br/>
+    <input type="radio" id="age" name="age" value="35+" /> 35+<br/>
+    <br/>
+    <label>Message</label>
+    <br/>
+    <textarea name="message">
+    </textarea>
+    <br/>
+    <br/>
+  </form>
+  <button onclick="SubForm()">Submit</button>
+</body>
+</html>
