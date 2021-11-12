@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>   Contact Form</title>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<script>
+function SubForm (){
+    $.ajax({
+        url:'https://api.apispreadsheets.com/data/20417/',
+        type:'post',
+        data:$("#myForm").serializeArray(),
+        success: function(){
+          alert("Form Data Submitted :)")
+        },
+        error: function(){
+          alert("There was an error :(")
+        }
+    });
+}
+</script>
+
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    div {
+        padding: 10px;
+        background-color: #f6f6f6;
+        overflow: hidden;
+    }
+    input[type=text], textarea, select {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid blue;
+        border-radius: 4px;
+    }
+    input[type=button]{ 
+        width: auto;
+        float: right;
+        cursor: pointer;
+        padding: 7px;
+    }
+</style>
+</head>
+<body    bgcolor="lightblue">
+
+    <h1><center>Create  </center></h1>
+    <hr color="orange">
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+     <df-messenger
+       intent="WELCOME"
+       chat-title="Assistant"
+       agent-id="d3cce74f-c516-4ccc-9d8c-32d81dc68987"
+       language-code="en"
+     ></df-messenger>
+     </hr>
+
+
+
+  <form id="myForm">
+    <label>Full Name</label>
+    <br/>
+    <input name="NAME" />
+    <br/>
+   
+   <br> <label>Topic or name of your project</label>
+    <br/>
+    <input name="Topic" />
+    <br/>
+    <br><br><br><label>Any links if needed </label>
+    <br/>
+    <input type="text" id="age" name="LINK"  height="300px"/> <br/>
+   
+    <br/>
+    <br><br><br><br> <label>Write anything</label>
+    <br/>
+    <textarea name="Write">
+    </textarea>
+    <br/>
+    <br/>
+  </form>
+  <button onclick="SubForm()">Submit</button>
+</body>
+</html>
