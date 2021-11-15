@@ -1,36 +1,213 @@
 <!DOCTYPE html>
-<head>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="table.css">
-    <link rel="stylesheet" href="Input.css">
-    <link rel="stylesheet" href="Blogs.video.css">
-
-
-</head>
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
 <body>
-    <div class="top-nav-bar">
-        <div class="search-box">
-          <input type="text" class="form-control">
-          <span class="input-group-text"><i class="fa fa-search"></i></span>
-        </div>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus'></i>
+      <span class="logo_name">Webflow</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="index.Html" class="active">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Home</span>
+          </a>
+        </li>
+
+        <li>
+            <a href="creative.html" class="active">
+              <i class='bx bx-grid-alt' ></i>
+              <span class="links_name">Creative corner </span>
+            </a>
+          </li>
+
+          <li>
+            <a href="Save-data.html" class="active">
+              <i class='bx bx-grid-alt' ></i>
+              <span class="links_name">Save your Data </span>
+            </a>
+          </li>
+
+          <li>
+            <a href="Workspace.html" class="active">
+              <i class='bx bx-grid-alt' ></i>
+              <span class="links_name">Workspace</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="Forms.html" class="active">
+              <i class='bx bx-grid-alt' ></i>
+              <span class="links_name">Make Html forms </span>
+            </a>
+          </li>
+          <li>
+            <a href="Meet.html" class="active">
+              <i class='bx bx-grid-alt' ></i>
+              <span class="links_name">Meet  </span>
+            </a>
+          </li>
+
+
+
+
+
+
+        <li>
+         
+        <li class="log_out">
+          <a href="#">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Creative corner </span>
       </div>
-        <div class="menu-bar">
+      <div class="search-box">
+        <input type="text" placeholder="Search...">
+        <i class='bx bx-search' ></i>
+      </div>
+      <div class="profile-details">
+        <!--<img src="images/profile.jpg" alt="">-->
+        <span class="admin_name">Chirayu kamal </span>
+        <i class='bx bx-chevron-down' ></i>
+      </div>
+    </nav>
+    <script>
+   let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".sidebarBtn");
+sidebarBtn.onclick = function() {
+  sidebar.classList.toggle("active");
+  if(sidebar.classList.contains("active")){
+  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+}else
+  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+}
+ </script>
+   <!--below this line  is my code       62-->
+
+   <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<script>
+function SubForm (){
+    $.ajax({
+        url:'https://api.apispreadsheets.com/data/20417/',
+        type:'post',
+        data:$("#myForm").serializeArray(),
+        success: function(){
+          alert("Form Data Submitted :)")
+        },
+        error: function(){
+          alert("There was an error :(")
+        }
+    });
+}
+</script>
+
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    div {
+        padding: 10px;
+       
+        overflow: hidden;
+    }
+    input[type=text], textarea, select {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid blue;
+        border-radius: 4px;
+    }
+    input[type=button]{ 
+        width: auto;
+        float: right;
+        cursor: pointer;
+        padding: 7px;
+    }
+</style>
+
+
+
+    
+    <hr color="orange">
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+     <df-messenger
+       intent="WELCOME"
+       chat-title="Assistant"
+       agent-id="d3cce74f-c516-4ccc-9d8c-32d81dc68987"
+       language-code="en"
+     ></df-messenger>
+     </hr>
+
+
+
+  <form id="myForm">
+    <label>Full Name</label>
+    <br/>
+    <input name="NAME" />
+    <br/>
+   
+   <br> <label>Topic or name of your project</label>
+    <br/>
+    <input name="Topic" />
+    <br/>
+    <br><br><br><label>Any links if needed </label>
+    <br/>
+    <input type="text" id="age" name="LINK"  height="300px"/> <br/>
+   
+    <br/>
+    <br><br><br><br> <label>Write anything</label>
+    <br/>
+    <textarea name="Write"  style="height:300px">
+    </textarea>
+    <br/>
+    <br/>
+  </form>
   
-      <ul>
-        <li><a href="index.html">Home</a>
-        </li>
-        <li><a href="creative.html">Blogs </a>
-        </li>
-        
-        <li><a href="Classroom.html">Discuss</a></li>
-        <li><a href="Tables.html">Search</a>
-        </li>
-        </ul>
-      </div>
-      <button class="input-bytton" onclick="window.location.href='Creative-page1.html';">
-        Create 
-      </button>
+  
+  
+  
+  
+  <button onclick="SubForm()">Submit</button>
+
 
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

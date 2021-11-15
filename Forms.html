@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
+    <link rel="stylesheet" href="style.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus'></i>
+      <span class="logo_name"><b>Web flow </b>  </span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="index.Html" class="active">
+            <i class='bx bx-grid-alt' ></i>
+            <span  class="links_name">Home</span>
+          </a>
+        </li>
+
+        <li>
+            <a href="creative.html" class="active">
+              <i class='bx bx-grid-alt' ></i>
+              <span class="links_name">Creative corner </span>
+            </a>
+          </li>
+
+          <li>
+            <a href="Save-data.html" class="active">
+              <i class='bx bx-grid-alt' ></i>
+              <span class="links_name">Save your Data </span>
+            </a>
+          </li>
+
+          <li>
+            <a href="Workspace.html" class="active">
+              <i class='bx bx-grid-alt' ></i>
+              <span class="links_name">Workspace</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="Forms.html" class="active">
+              <i class='bx bx-grid-alt' ></i>
+              <span class="links_name">Make Html forms </span>
+            </a>
+          </li>
+          <li>
+            <a href="Meet.html" class="active">
+              <i class='bx bx-grid-alt' ></i>
+              <span class="links_name">Meet  </span>
+            </a>
+          </li>
+
+
+
+
+
+
+     <li>
+         
+        <li class="log_out">
+          <a href="#">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard"> Forms</span>
+      </div>
+      <div class="search-box">
+        <input type="text" placeholder="Search...">
+        <i class='bx bx-search' ></i>
+      </div>
+      <div class="profile-details">
+        <!--<img src="images/profile.jpg" alt="">-->
+        <span class="admin_name">Chirayu kamal </span>
+        <i class='bx bx-chevron-down' ></i>
+      </div>
+    </nav>
+    <script>
+   let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".sidebarBtn");
+sidebarBtn.onclick = function() {
+  sidebar.classList.toggle("active");
+  if(sidebar.classList.contains("active")){
+  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+}else
+  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+}
+ </script>
+   <!--below this line  is my code       62-->
+
+
+
+
+
+
+
+   <script
+   src="https://code.jquery.com/jquery-3.4.1.js"
+   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+   crossorigin="anonymous"></script>
+     <script>
+         function SubForm (){
+             $.ajax({
+                 url:'https://api.apispreadsheets.com/data/20426/',
+                 type:'post',
+                 data:$("#myForm").serializeArray(),
+                 success: function(){
+                   alert("thank you for submiting this data  Thanks  Chirayu")
+                 },
+                 error: function(){
+                   alert("There was an error :(")
+                 }
+             });
+         }
+         </script>
+ 
+ 
+ 
+ 
+ <style>
+     * {
+         box-sizing: border-box;
+     }
+     div {
+         padding: 10px;
+        
+         overflow: hidden;
+     }
+     input[type=text], textarea, select {
+         
+         padding: 12px;
+         border: 15px solid lightblue;
+         border-radius: 10px;
+         width: 45%;
+   padding: 12px 20px;
+   margin: 8px 0;
+   box-sizing: border-box;
+     }
+     input[type=button]{ 
+         
+         float: right;
+         cursor: pointer;
+         background-color: lightgray;
+   
+     }
+ </style>
+         
+         
+ 
+ 
+ 
+ 
+ 
+     
+ 
+ 
+ 
+     <br><br><br><br><br><br><br><form id="myForm">
+         
+         
+         <br><label>Full Name</label>
+         <br/>
+         <input type="text"  name="name" />
+         
+         
+         
+           <label>Email</label>
+         
+         <input  type="text" name="email" />
+         <br/>
+         
+         
+         
+            <br> <br> <br> <label>Age</label>
+         <br/>
+         <input type="radio" id="age" name="age" value="1 -18" /> 1 - 18<br/>
+         <input type="radio" id="age" name="age" value="18-35" /> 18-35<br/>
+         <input type="radio" id="age" name="age" value="35+" /> 35+<br/>
+         <br/>
+ 
+            <label>Date</label>
+         
+         <input type="date" name="date"/>
+         
+         <br/>
+         
+         
+         
+         
+         
+           <br> <label> What type of form you want to be prepared write here  </label>
+         <br/>
+         <textarea  type="text"   name="message">
+         </textarea>
+         <br/>
+         <br/>
+       </form>
+       <button onclick="SubForm()">Submit</button>
+ 
+ 
+ 
+ 
+ <br><br><br><br><br>
+ <br><br><h1><center>Result</center></h1>
+ <iframe src="https://docs.google.com/spreadsheets/d/11PqNikZxqCb0AR7hP9iAwHtJT_92Vcm7Iu71Nv3QuHk/edit?usp=sharing" height="500"  width="100%"></iframe>
+ 
+ 
+ <h1><center>C-FORM V/S G-FORM </center></h1>
+ <h3> 1.  You can see live result in this website but in G-forms  only owner can see result  </h3>
+ <h3> 2.  it is easy to understand result and to fill form in c-forms   </h3>
+ <h3> 3.  But G-form has a good design and c-form is a bit simple in design .  </h3>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
