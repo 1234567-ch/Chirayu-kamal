@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
+    <link rel="stylesheet" href="style.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus'></i>
+      <span class="logo_name">Webflow</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="index.Html" class="active">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Home</span>
+          </a>
+        </li>
+
+        <li>
+            <a href="creative.html" class="active">
+              <i class='bx bx-grid-alt' ></i>
+              <span class="links_name">Creative corner </span>
+            </a>
+          </li>
+
+          <li>
+            <a href="Save-data.html" class="active">
+              <i class='bx bx-grid-alt' ></i>
+              <span class="links_name">Save your Data </span>
+            </a>
+          </li>
+
+          <li>
+            <a href="Workspace.html" class="active">
+              <i class='bx bx-grid-alt' ></i>
+              <span class="links_name">Workspace</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="Forms.html" class="active">
+              <i class='bx bx-grid-alt' ></i>
+              <span class="links_name">Make Html forms </span>
+            </a>
+          </li>
+          <li>
+            <a href="Meet.html" class="active">
+              <i class='bx bx-grid-alt' ></i>
+              <span class="links_name">Meet  </span>
+            </a>
+          </li>
+
+
+
+
+
+
+        <li>
+         
+        <li class="log_out">
+          <a href="#">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Dashboard</span>
+      </div>
+      <div class="search-box">
+        <input type="text" placeholder="Search...">
+        <i class='bx bx-search' ></i>
+      </div>
+      <div class="profile-details">
+        <!--<img src="images/profile.jpg" alt="">-->
+        <span class="admin_name">Chirayu kamal </span>
+        <i class='bx bx-chevron-down' ></i>
+      </div>
+    </nav>
+    <script>
+   let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".sidebarBtn");
+sidebarBtn.onclick = function() {
+  sidebar.classList.toggle("active");
+  if(sidebar.classList.contains("active")){
+  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+}else
+  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+}
+ </script>
+   <!--below this line  is my code       62-->
+
+
+   <head>
+    <!-- Include Bootstrap for styling -->
+    <link rel="stylesheet" href=
+    "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    
+    <style>
+        .qr-code {
+        max-width: 200px;
+        margin: 10px;
+        float : center;
+        border: 15px solid green;
+        
+        
+    }
+        body{
+            background-color: "lightblue";
+            border: 2px solid black;
+        }
+        .h3{
+            color :cadetblue;
+            
+        }
+        .control-label col-sm-2{
+           font-size: ;
+        }
+        .bt{
+            align: "center";
+        }
+        
+    </style>
+    
+    
+    </head>
+    
+    <body>
+        
+       
+         
+       <br><br><br><br><br><br><br><br><br><br><h3> Enter the content in the box and then click generate and then  scan this qr code </h3>
+    
+    <div class="container-fluid">
+        <div class="text-center">
+    
+        <!-- Get a Placeholder image initially,
+        this will change according to the
+        data entered later -->
+        <img src=
+    "https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=160x160&chld=L|0"
+            class="qr-code img-thumbnail img-responsive" />
+        </div>
+    
+        <div class="form-horizontal">
+        <div class="form-group">
+            
+        
+    
+            <!-- Input box to enter the
+                required data -->
+                <div>
+            <input type="text"   size="60"  width="30"
+                maxlength="50" class="form-control"
+                id="content" placeholder="Enter content " />
+                </div>
+                
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+    
+            
+            
+            <div>
+                </div>
+        </div>
+    </div>
+    
+    <script src=
+        "https://code.jquery.com/jquery-3.5.1.js">
+    </script>
+    
+    <script>
+        // Function to HTML encode the text
+        // This creates a new hidden element,
+        // inserts the given text into it
+        // and outputs it out as HTML
+        function htmlEncode(value) {
+        return $('<div/>').text(value)
+            .html();
+        }
+    
+        $(function () {
+    
+        // Specify an onclick function
+        // for the generate button
+        $('#generate').click(function () {
+    
+            // Generate the link that would be
+            // used to generate the QR Code
+            // with the given data
+            let finalURL =
+    'https://chart.googleapis.com/chart?cht=qr&chl=' +
+            htmlEncode($('#content').val()) +
+            '&chs=160x160&chld=L|0'
+    
+            // Replace the src of the image with
+            // the QR code image
+            $('.qr-code').attr('src', finalURL);
+        });
+        });
+    </script>
+    
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+       
+        input[type=text], textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type=button]{ 
+            width: auto;
+            float: right;
+            cursor: pointer;
+            padding: 7px;
+        }
+    </style>
+    </head>
+    <body>
+    
+      
+    <div>
+        
+        <!--Add few elements to the form-->
+    
+       
+    <button type="button" class=
+    "btn btn-default" id="generate">
+    Generate
+    </button>
+    </body>
+    
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
