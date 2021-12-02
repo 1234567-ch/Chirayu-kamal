@@ -21,6 +21,29 @@
     <title>Auditorium </title>
     
 <meta name="csrf-token" content="MMJVN6ZxWqHJGuh1hPIwWznMuhiwTMESVaLPkTN9mcuXc54bCgmiPSdtKMfj4MBZ" />
+	  
+	  
+	  
+	  
+	  <script
+   src="https://code.jquery.com/jquery-3.4.1.js"
+   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+   crossorigin="anonymous"></script>
+     <script>
+         function SubForm (){
+             $.ajax({
+                 url:'https://api.apispreadsheets.com/data/20952/',
+                 type:'post',
+                 data:$("#myForm").serializeArray(),
+                 success: function(){
+                   alert("You attendance have been marked ")
+                 },
+                 error: function(){
+                   alert("There was an error, please fill it again  :(")
+                 }
+             });
+         }
+         </script>
 
 
 
@@ -51,6 +74,26 @@
 	</div>
 	
 </main>
+	  
+	  <form id="myForm">
+		  <label> Attendace</label>
+	  <br><label> Name</label>
+         <br/>
+         <input type="text"  name="Name" />
+	  
+	   <label>Date</label>
+         
+         <input type="date" name="Date"/>
+         
+         <br/>
+		  
+		  </form>
+       <button onclick="SubForm()">Submit</button>
+	  
+	  
+	  
+	  
+	  
 <!--to align -->
 <div class="warning-message">
 	<img src="https://pvnew.blob.core.windows.net/static/images/warninng.gif" width="100%" height="100%">
