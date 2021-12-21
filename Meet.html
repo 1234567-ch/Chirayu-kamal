@@ -104,7 +104,14 @@ sidebarBtn.onclick = function() {
 
 
 
-  <br><br><br><br><br><br> <iframe src="https://webflow-meet.daily.co/By-Chirayukamal" height="800px"  width="100%"></iframe>
+  <br><br><br><br><br><br> 
+<script crossorigin src="https://blogs-great.daily.co/C-meet"></script>
+<script>
+  function createFrameAndJoinRoom() {
+    window.callFrame = window.DailyIframe.createFrame();
+    callFrame.join({ url: DAILY_ROOM_URL });
+  }
+</script>
 
 
 
