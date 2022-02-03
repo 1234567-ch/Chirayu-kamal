@@ -197,9 +197,7 @@ sidebarBtn.onclick = function() {
         ></df-messenger>
         </hr>
         <div>
-            <input type="text" id="txtName" readonly>
-          
-        </div>
+            
         <div>
             
         </div>
@@ -371,12 +369,28 @@ sidebarBtn.onclick = function() {
     let saveFile = () => {
     	
        
-    	const name = document.getElementById('txtName');
+   
+       const CODE = document.getElementById('SCRIPT');
+      const CODE = document.getElementById('TXT');
+       const CODE = document.getElementById('INPUT');
+       const CODE = document.getElementById('LEFT');
         const CODE = document.getElementById('CODE');
+      
+      
+      
+      
+   
+      
+      
+   
+         
+        
+  
+      
         
         // This variable stores all the data.
         let data = 
-            '\r  ' + name.value + 'Powered by Webflow link = https://1234567-ch.github.io/Chirayu-kamal/index.html ' +  CODE.value ; 
+            '\r  ' + SCRIPT.value + TXT.value + INPUT.value + LEFT.value    +  CODE.value ; 
 
 
 
@@ -387,7 +401,7 @@ sidebarBtn.onclick = function() {
         
         // Convert the text to BLOB.
         const textToBLOB = new Blob([data], { type: 'text/plain' });
-        const sFileName = 'Webflow.html';	   // The file to save the data.
+        const sFileName = 'CONTACT-FORM-MODULE.html';	   // The file to save the data.
 
         let newLink = document.createElement("a");
         newLink.download = sFileName;
