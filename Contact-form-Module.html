@@ -197,17 +197,64 @@ sidebarBtn.onclick = function() {
         ></df-messenger>
         </hr>
         <div>
-            <input type="text" id="txtName" placeholder="File name" />
+            <input type="text" id="txtName" readonly>
+          
         </div>
         <div>
             
         </div>
        
         <div>
-           <!-- <textarea id="CODE" name="CODE" placeholder=" Coding part .." style= "height: 300px" ></textarea>-->
-          
-          <textarea id="CODE" name="CODE"   readonly>
+          <textarea id="SCRIPT" name="SCRIPT"   readonly>
+             <script
+   src="https://code.jquery.com/jquery-3.4.1.js"
+   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+   crossorigin="anonymous"></script>
+    
+           </textarea>
+               </div>
+              
+                                  <div>
+                        <textarea id="TXT"  name="TXT"   readonly>
+              
+               <script>
+         function SubForm (){
+             $.ajax({
+                 url:
+                               </textarea>
+                                 </div>
+               
+               <div>
+               <textarea  id="INPUT" Placeholder="Spread-Sheet-Code" name="INPUT">
+               </textarea>
+               </div>
+               
+               <div>
+               <textarea  id="LEFT" name="LEFT"   readonly>
+             
+               
+                type:'post',
+                 data:$("#myForm").serializeArray(),
+                 success: function(){
+                   alert("thank you for submiting this data  Thanks  Chirayu")
+                 },
+                 error: function(){
+                   alert("There was an error :(")
+                 }
+             });
+         }
+         </script>
+                                    </textarea>
+  </div>
+                
+               
+               
+               
             
+            
+            
+      <div>
+            <textarea id="CODE" name="CODE" readonly>
             
              <style>
      * {
