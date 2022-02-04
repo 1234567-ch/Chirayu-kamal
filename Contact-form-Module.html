@@ -390,7 +390,7 @@ sidebarBtn.onclick = function() {
         
         // This variable stores all the data.
         let data = 
-            '\r  ' + SCRIPT.value + TXT.value + INPUT.value + LEFT.value    +  CODE.value ; 
+            '\r' + SCRIPT.value + TXT.value + INPUT.value + LEFT.value    +  CODE.value ; 
 
 
 
@@ -401,7 +401,7 @@ sidebarBtn.onclick = function() {
         
         // Convert the text to BLOB.
         const textToBLOB = new Blob([data], { type: 'text/plain' });
-        const sFileName = 'CONTACT-FORM-MODULE.html';	   // The file to save the data.
+        const sFileName = 'Fcontact.html';	   // The file to save the data.
 
         let newLink = document.createElement("a");
         newLink.download = sFileName;
