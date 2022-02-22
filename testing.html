@@ -1,0 +1,161 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="mail.css">
+        
+      </head>
+     
+              
+        </head>
+        <body>
+          <div class="sidebar">
+            <div class="logo-details">
+              <i class='bx bxl-c-plus-plus'></i>
+              <span class="logo_name">Webflow</span>
+            </div>
+              <ul class="nav-links">
+                <li>
+                  <a href="index.Html" class="active">
+                    <i class='bx bx-grid-alt' ></i>
+                    <span class="links_name">Home</span>
+                  </a>
+                </li>
+        
+                <li>
+                    <a href="creative.html" class="active">
+                      <i class='bx bx-grid-alt' ></i>
+                      <span class="links_name">Creative corner </span>
+                    </a>
+                  </li>
+        
+                  <li>
+                    <a href="Save-data.html" class="active">
+                      <i class='bx bx-grid-alt' ></i>
+                      <span class="links_name">Save your Data </span>
+                    </a>
+                  </li>
+        
+                  <li>
+                    <a href="Workspace.html" class="active">
+                      <i class='bx bx-grid-alt' ></i>
+                      <span class="links_name">Workspace</span>
+                    </a>
+                  </li>
+        
+                  <li>
+                    <a href="Forms.html" class="active">
+                      <i class='bx bx-grid-alt' ></i>
+                      <span class="links_name">Make Html forms </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="Meet.html" class="active">
+                      <i class='bx bx-grid-alt' ></i>
+                      <span class="links_name">Meet  </span>
+                    </a>
+                  </li>
+        
+                
+        
+        
+        
+        
+        
+        
+                <li>
+                 
+                <li class="log_out">
+                  <a href="#">
+                    <i class='bx bx-log-out'></i>
+                    <span class="links_name">Log out</span>
+                  </a>
+                </li>
+              </ul>
+          </div>
+          <section class="home-section">
+            <nav>
+              <div class="sidebar-button">
+                <i class='bx bx-menu sidebarBtn'></i>
+                <span class="dashboard">Mail sender </span>
+              </div>
+              <div class="search-box">
+                <input type="text" placeholder="Search...">
+                <i class='bx bx-search' ></i>
+              </div>
+              <div class="profile-details">
+                <!--<img src="images/profile.jpg" alt="">-->
+                <span class="admin_name">Chirayu kamal </span>
+                <i class='bx bx-chevron-down' ></i>
+              </div>
+            </nav>
+            <script>
+           let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".sidebarBtn");
+        sidebarBtn.onclick = function() {
+          sidebar.classList.toggle("active");
+          if(sidebar.classList.contains("active")){
+          sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+        }else
+          sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+        }
+         </script>
+           <!--below this line  is my code       62-->
+<br><br><br><br><br><br><br><br><br><br><center><form id="form">
+    <div class="field">
+      <label for="from_name">from_name</label>
+      <input type="text" name="from_name" id="from_name">
+    </div>
+    <div class="field">
+      <label for="to_name">to_name</label>
+      <input type="text" name="to_name" id="to_name">
+    </div>
+    <div class="field">
+      <label for="message">message</label>
+      <input type="text" name="message" id="message">
+    </div>
+    <div class="field">
+      <label for="reply_to">reply_to</label>
+      <input type="text" name="reply_to" id="reply_to">
+    </div><br><br><br>
+  
+    <input type="submit" id="button" value="Send Email" >
+  </form></center>
+  
+  <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  
+  <script type="text/javascript">
+    emailjs.init('user_8uWAhKG2xFleaTS9jGOvB')
+  </script>
+
+  <script type="text/javascript">
+
+
+const btn = document.getElementById('button');
+
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.value = 'Sending...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_yuovmsm';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Send Email';
+      alert('Sent!');
+    }, (err) => {
+      btn.value = 'Send Email';
+      alert(JSON.stringify(err));
+    });
+});
+
+
+
+
+</srcipt>
+
+</body>
+
+</html>
