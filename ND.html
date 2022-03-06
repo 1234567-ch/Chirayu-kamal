@@ -1,0 +1,466 @@
+html>
+    <head>
+        <link rel="stylesheet" href="mail.css">
+        <title>Mail </title>
+        
+      </head>
+     
+              
+        </head>
+        <body>
+          <div class="sidebar">
+            <div class="logo-details">
+              <i class='bx bxl-c-plus-plus'></i>
+              <span class="logo_name">Webflow</span>
+            </div>
+              <ul class="nav-links">
+                <li>
+                  <a href="index.Html" class="active">
+                    <i class='bx bx-grid-alt' ></i>
+                    <span class="links_name">Home</span>
+                  </a>
+                </li>
+        
+                <li>
+                    <a href="creative.html" class="active">
+                      <i class='bx bx-grid-alt' ></i>
+                      <span class="links_name">Creative corner </span>
+                    </a>
+                  </li>
+        
+                  <li>
+                    <a href="Save-data.html" class="active">
+                      <i class='bx bx-grid-alt' ></i>
+                      <span class="links_name">Save your Data </span>
+                    </a>
+                  </li>
+        
+                  <li>
+                    <a href="Workspace.html" class="active">
+                      <i class='bx bx-grid-alt' ></i>
+                      <span class="links_name">Workspace</span>
+                    </a>
+                  </li>
+        
+                  <li>
+                    <a href="Forms.html" class="active">
+                      <i class='bx bx-grid-alt' ></i>
+                      <span class="links_name">Make Html forms </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="Meet.html" class="active">
+                      <i class='bx bx-grid-alt' ></i>
+                      <span class="links_name">Meet  </span>
+                    </a>
+                  </li>
+        
+                
+        
+        
+        
+        
+        
+        
+                <li>
+                 
+                <li class="log_out">
+                  <a href="#">
+                    <i class='bx bx-log-out'></i>
+                    <span class="links_name">Log out</span>
+                  </a>
+                </li>
+              </ul>
+          </div>
+          <section class="home-section">
+            <nav>
+              <div class="sidebar-button">
+                <i class='bx bx-menu sidebarBtn'></i>
+                <span class="dashboard">Mail sender </span>
+              </div>
+              <div class="search-box">
+                <input type="text" placeholder="Search...">
+                <i class='bx bx-search' ></i>
+              </div>
+              <div class="profile-details">
+                <!--<img src="images/profile.jpg" alt="">-->
+                <span class="admin_name">Chirayu kamal </span>
+                <i class='bx bx-chevron-down' ></i>
+              </div>
+            </nav>
+            <script>
+           let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".sidebarBtn");
+        sidebarBtn.onclick = function() {
+          sidebar.classList.toggle("active");
+          if(sidebar.classList.contains("active")){
+          sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+        }else
+          sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+        }
+         </script>
+           <!--below this line  is my code       62-->
+<br><br><br><br><br><br><br><br><br><br><center>
+              <!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <script
+    type="text/javascript"
+    src="/js/lib/dummy.js"
+    
+  ></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+
+
+  <style id="compiled-css" type="text/css">
+      .field {
+  margin-bottom: 10px;
+}
+      
+      .input[type=text] {
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 100%;
+    border: 2px solid blue;
+  border-radius: 4px;
+    background-color: lightblue;
+}
+
+
+input[type="submit"] {
+  display: block;
+  padding: 6px 30px;
+  font-size: 14px;
+  background-color: #4460AA;
+  color: #fff;
+  border: none
+}
+    /* EOS */
+  </style>
+
+  <script id="insert"></script>
+
+
+    <script src="/js/stringify.js?1b87a8e3a931715a2d86f1ebae1438038242ed40" charset="utf-8"></script>
+    <script>
+      const customConsole = (w) => {
+        const pushToConsole = (payload, type) => {
+          w.parent.postMessage({
+            console: {
+              payload: stringify(payload),
+              type:    type
+            }
+          }, "*")
+        }
+
+        w.onerror = (message, url, line, column) => {
+          // the line needs to correspond with the editor panel
+          // unfortunately this number needs to be altered every time this view is changed
+          line = line - 70
+          if (line < 0){
+            pushToConsole(message, "error")
+          } else {
+            pushToConsole(`[${line}:${column}] ${message}`, "error")
+          }
+        }
+
+        let console = (function(systemConsole){
+          return {
+            log: function(){
+              let args = Array.from(arguments)
+              pushToConsole(args, "log")
+              systemConsole.log.apply(this, args)
+            },
+            info: function(){
+              let args = Array.from(arguments)
+              pushToConsole(args, "info")
+              systemConsole.info.apply(this, args)
+            },
+            warn: function(){
+              let args = Array.from(arguments)
+              pushToConsole(args, "warn")
+              systemConsole.warn.apply(this, args)
+            },
+            error: function(){
+              let args = Array.from(arguments)
+              pushToConsole(args, "error")
+              systemConsole.error.apply(this, args)
+            },
+            system: function(arg){
+              pushToConsole(arg, "system")
+            },
+            clear: function(){
+              systemConsole.clear.apply(this, {})
+            },
+            time: function(){
+              let args = Array.from(arguments)
+              systemConsole.time.apply(this, args)
+            },
+            assert: function(assertion, label){
+              if (!assertion){
+                pushToConsole(label, "log")
+              }
+
+              let args = Array.from(arguments)
+              systemConsole.assert.apply(this, args)
+            }
+          }
+        }(window.console))
+
+        window.console = { ...window.console, ...console }
+
+        console.system("Running fiddle")
+      }
+
+      if (window.parent){
+        customConsole(window)
+      }
+    </script>
+</head>
+<body>
+    
+    
+    
+    
+    <div class="column">
+        
+         <p>
+                <a href="">
+                   <center><img border="0" alt="Meet" src="mail.png" width="100" height="100"></center>
+                   </a>
+                     </p>
+      </div>
+      
+      
+      <br>   <br>   <br>   <br>   <br>   <br>   <br>
+        
+    <div class="column">
+      <style>
+        * {
+          box-sizing: border-box;
+        }
+        
+        input[type=text], select, textarea {
+          width: 100%;
+          padding: 12px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          resize: vertical;
+        }
+        
+        label {
+          padding: 12px 12px 12px 0;
+          display: inline-block;
+        }
+        
+        input[type=submit] {
+          background-color: #04AA6D;
+          color: white;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          float: right;
+        }
+        
+        input[type=submit]:hover {
+          background-color: #45a049;
+        }
+        
+        .container {
+          border-radius: 5px;
+          background-color: #f2f2f2;
+          padding: 20px;
+        }
+        
+        .col-25 {
+          float: left;
+          width: 25%;
+          margin-top: 6px;
+        }
+        
+        .col-75 {
+          float: left;
+          width: 75%;
+          margin-top: 6px;
+        }
+        
+        /* Clear floats after the columns */
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        
+        /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+          .col-25, .col-75, input[type=submit] {
+            width: 100%;
+            margin-top: 0;
+          }
+        }
+        </style>
+        </head>
+        <body>
+        
+        <h2>Responsive Form</h2>
+        <p>Resize the browser window to see the effect. When the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other.</p>
+        
+        <div class="container">
+          <form action="/action_page.php">
+          <div class="row">
+            <div class="col-25">
+               <div class="field">
+            <label for="from_name" for="fname">from Name</label>
+                   </div> 
+              
+            </div>
+            <div class="col-75">
+              <input type="text" id="fname" name="firstname" name="from_name" placeholder="Name of the sender ..">
+            </div>
+          </div>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <div class="row" class="field">
+            <div class="col-25">
+              <label for="lname">To Name</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="lname" id="to_name" name="lastname" name="to_name" placeholder="Name of the reciever ">
+            </div>
+          </div>
+          
+          
+          
+          
+        
+          
+          
+          
+          
+          
+          <div class="row" class="field">
+            <div class="col-25">
+              <label for="reply_to">Email Id </label>
+            </div>
+            <div class="col-75">
+            <input type="text" name="reply_to" id="reply_to" placeholder="Email of the reciever">
+          </div>
+          
+            </div></div>
+         
+         
+         
+        
+         
+         
+         
+         <div class="row" class="field">
+            <div class="col-25">
+              <label for="subject" for="message">Message </label>
+            </div>
+            <div class="col-75">
+              <textarea id="subject"id="message"  name="subject" name="message" 
+              placeholder="Write some message for the reciever " style="height:200px"></textarea>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <input  type="submit" id="button" value="Send ">
+          </div>
+          </form>
+        </div>
+        
+        </body>
+        </html>
+        
+    
+   
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script type="text/javascript">
+  emailjs.init('user_8uWAhKG2xFleaTS9jGOvB')
+</script>
+
+    <script type="text/javascript">//<![CDATA[
+
+
+const btn = document.getElementById('button');
+
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.value = 'template Name = service_yuovmsm , Requsting Google and Webflow1 Portal and Genarating email......... ';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_yuovmsm';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Send Email';
+      alert('Sent!');
+    }, (err) => {
+      btn.value = 'Send Email';
+      alert(JSON.stringify(err));
+    });
+});
+
+
+  //]]></script>
+
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: ""
+      }], "*")
+    }
+
+    // always overwrite window.name, in case users try to set it manually
+    window.name = "result"
+  </script>
+
+    <script>
+      let allLines = []
+
+      window.addEventListener("message", (message) => {
+        if (message.data.console){
+          let insert = document.querySelector("#insert")
+          allLines.push(message.data.console.payload)
+          insert.innerHTML = allLines.join(";\r")
+
+          let result = eval.call(null, message.data.console.payload)
+          if (result !== undefined){
+            console.log(result)
+          }
+        }
+      })
+    </script>
+
+</body>
+</html>
+
+</body>
+
+</html>
